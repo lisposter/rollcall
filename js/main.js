@@ -1,6 +1,8 @@
 var fs = require('fs');
 var _ = require('lodash');
 
+var pkg = require('./package.json');
+
 var namelist = [];
 var passnames = [];
 var interval;
@@ -79,7 +81,7 @@ function roll() {
     }
     var shuffled = _.shuffle(_temp)[0];
     container.innerHTML = shuffled;
-  }, 10);
+  }, 30);
 
   btn.innerHTML = "Pause";
 }
@@ -92,6 +94,7 @@ function reset() {
   }
   btn.innerHTML = "Roll!";
   container.innerHTML = 'Ready!';
+  $('#reset').blur();
 }
 
 $('#roll').click(roll);
@@ -100,9 +103,7 @@ $('#reset').click(reset);
 $('body').keydown(function(e) {
   if (e.which === 32) {
     roll();
-  }
-
-  if (e.which === 13) {
+  } else if (e.which === 13) {
     reset();
   }
 });
@@ -119,9 +120,17 @@ $('.drawer-handle').click(function() {
   $('.drawer').toggleClass('open');
 });
 
+$('#container').click(function() {
+  if ($('.drawer').hasClass('open')) {
+    $('.drawer').removeClass('open');
+  }
+});
+
 $('.drawer #ipt-bypass').change(function() {
   options.bypass = $(this).is(':checked');
   if (options.bypass === false) {
     passnames = [];
   }
 });
+
+$('.drawer .version').text('v' + pkg.version);

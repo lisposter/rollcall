@@ -7,7 +7,7 @@ body,
 }
 
 body {
-    font-family: "Italiana", "Helvetica Neue","Open Sans",sans-serif;
+    font-family: "Italiana", "Helvetica Neue", "Open Sans", "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
     background: #f8f8f0;
 }
 
@@ -15,7 +15,7 @@ body {
     position: relative;
     text-align: center;
     padding-top: 100px;
-    font-size: 40px;
+    font-size: 50px;
     color: #222;
     font-weight: bold;
 }
@@ -36,6 +36,7 @@ body {
     background: #02a3c6;
     color: #fff;
     font-weight: bold;
+    font-size: 20px;
 }
 
 #reset {

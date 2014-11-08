@@ -4,9 +4,11 @@
   "version": "0.2.0",
   "main": "index.html",
   "window": {
-    "toolbar": true,
+    "title": "Rollcall",
+    "toolbar": false,
     "width": 640,
-    "height": 480
+    "height": 480,
+    "icon": "icon.png"
   },
   "dependencies": {
     "iconv-lite": "^0.4.4",
