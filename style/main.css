@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html,
+body,
+#container {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background: #f8f8f0;
+}
+
+#container {
+    text-align: center;
+    padding-top: 100px;
+    font-size: 40px;
+    color: #222;
+    font-weight: bold;
+}
+
+#container.hover {
+}
+
+
+#roll {
+    width: 200px;
+    height: 50px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    margin-left: -100px;
+    background: #02a3c6;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+}
