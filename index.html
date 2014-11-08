@@ -1,16 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Rollcall</title>
-    <link rel="stylesheet" href="style/main.css">
-    <style>
-</style>
-</head>
-<body>
-    <div id="container"></div>
-    <div id="result"></div>
-    <button id="roll">Roll!</button>
-    <script src="js/main.js"></script>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>Rollcall</title>
+        <link rel="stylesheet" href="style/bootstrap.min.css">
+        <link rel="stylesheet" href="style/main.css">
+        <style>
+        </style>
+    </head>
+    <body>
+        <div id="container"></div>
+        <div id="result"></div>
+        <button id="roll" class="btn btn-primary">Roll!</button>
+        <button id="reset" class="btn btn-default">Reset</button>
+
+        <div class="drawer">
+            <div class="drawer-handle"></div>
+            <h4>Options</h4>
+            <div class="drawer-inner">
+                <label for="bypass">Bypass</label>
+                <input id="ipt-bypass" name="bypass" type="checkbox">
+            </div>
+            <dic class="drawer-footer">
+                <p>Leigh @lisposter</p>
+                <p>http://zhu.li</p>
+                &copy; 2014
+            </dic>
+        </div>
+
+        <script src="js/jquery-2.1.1.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
 </html>

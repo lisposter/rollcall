@@ -1,19 +1,18 @@
-* {
-    margin: 0;
-    padding: 0;
-}
 html,
 body,
 #container {
     height: 100%;
     width: 100%;
+    overflow: hidden;
 }
 
 body {
+    font-family: "Italiana", "Helvetica Neue","Open Sans",sans-serif;
     background: #f8f8f0;
 }
 
 #container {
+    position: relative;
     text-align: center;
     padding-top: 100px;
     font-size: 40px;
@@ -22,19 +21,72 @@ body {
 }
 
 #container.hover {
+    border: 5px dashed #e8e8e8;
+    border-radius: 20px;
 }
 
 
-#roll {
+#roll,
+#reset {
     width: 200px;
     height: 50px;
     position: absolute;
     bottom: 20px;
-    left: 50%;
-    margin-left: -100px;
+    left: 10%;
     background: #02a3c6;
-    border: none;
-    font-size: 20px;
-    font-weight: bold;
     color: #fff;
+    font-weight: bold;
+}
+
+#reset {
+    left: auto;
+    right: 10%;
+}
+
+
+.drawer {
+    position: absolute;
+    top: 0;
+    right: -160px;
+    width: 160px;
+    height: 100%;
+    padding: 10px;
+    background: #e1e1e8;
+    color: #aeaeae;
+    transition: right 0.3s ease-in-out;
+}
+
+.drawer.open {
+    right: 0;
+    transition: right 0.3s ease-in-out;
+}
+
+.drawer-handle {
+    position: absolute;
+    top: 50%;
+    left: -20px;
+    margin-top: -50px;
+    height: 100px;
+    width: 20px;
+    background: #f0ad4e;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    cursor: pointer;
+}
+
+.drawer h4 {
+    text-align: center;
+    margin-top: 10%;
+    padding-bottom: 5%;
+    border-bottom: 1px solid #f8f8f8;
+}
+
+.drawer label {
+    margin-right: 10px;
+}
+
+.drawer-footer {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
 }

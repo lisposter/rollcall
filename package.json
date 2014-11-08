@@ -1,12 +1,12 @@
 {
   "name": "Rollcall",
   "description": "Simple rocall app based on node-webkit.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "main": "index.html",
   "window": {
-    "toolbar": false,
-    "width": 660,
-    "height": 500
+    "toolbar": true,
+    "width": 640,
+    "height": 480
   },
   "dependencies": {
     "iconv-lite": "^0.4.4",
