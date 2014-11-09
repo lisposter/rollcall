@@ -1,6 +1,8 @@
 # rollcall
 A simple rollcall app based on node-webkit.
 
+> **Note:**
+> I just have made it work, the code is messy now.
 
 ## How to run?
 ### Mac:

@@ -1,4 +1,3 @@
-var fs = require('fs');
 var _ = require('lodash');
 
 var pkg = require('./package.json');
@@ -12,6 +11,28 @@ var options = {
 
 var btn = document.getElementById("roll");
 var container = document.getElementById('container');
+
+/**
+ * add message to message board
+ * @param {string} msg  message to show
+ * @param {string} type message type
+ */
+function addMsg(msg, type) {
+  var msgBoard = $('#message');
+  if (type) {
+    msgBoard.attr('class', 'bg-' + type);
+  }
+  msgBoard.text(msg).css('z-index', 1000).siblings().css('z-index', 900);
+}
+
+/**
+ * show roll result
+ * @param  {string} result result to show
+ */
+function showResult(result) {
+  var resultBoard = $('#result');
+  resultBoard.text(result).css('z-index', 1000).siblings().css('z-index', 900);
+}
 
 window.ondragover = function(e) {
   e.preventDefault();
@@ -42,7 +63,7 @@ container.ondrop = function(e) {
       return itm.length > 0;
     });
     namelist = _.shuffle(names);
-    container.innerHTML = 'Ready!';
+    addMsg('Ready!', 'info');
   };
 
   reader.readAsText(file, "GBK");
@@ -52,12 +73,12 @@ container.ondrop = function(e) {
 
 function roll() {
   if(namelist.length <= 0) {
-    container.innerHTML = 'Please drag namelist file here!';
+    addMsg('Please drag namelist file here!', 'warning');
     return;
   }
 
   if(interval) {
-    passnames.push(container.innerHTML);
+    passnames.push($('#result').text());
     clearInterval(interval);
     interval = null;
     btn.innerHTML = "Roll!";
@@ -75,15 +96,16 @@ function roll() {
       _temp = namelist;
     }
     if (_temp.length <= 1) {
-      container.innerHTML = 'Please Reset!';
+      addMsg('Please Reset!', 'warning');
       clearInterval(interval);
       return false;
     }
     var shuffled = _.shuffle(_temp)[0];
-    container.innerHTML = shuffled;
+    showResult(shuffled);
   }, 30);
 
   btn.innerHTML = "Pause";
+  $('#roll').blur();
 }
 
 function reset() {
@@ -93,7 +115,7 @@ function reset() {
     interval = null;
   }
   btn.innerHTML = "Roll!";
-  container.innerHTML = 'Ready!';
+  addMsg('Ready!', 'info');
   $('#reset').blur();
 }
 
@@ -134,3 +156,8 @@ $('.drawer #ipt-bypass').change(function() {
 });
 
 $('.drawer .version').text('v' + pkg.version);
+
+
+$(function() {
+  addMsg('Drag namelist here to start', 'info');
+});
