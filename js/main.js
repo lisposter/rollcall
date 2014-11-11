@@ -1,6 +1,14 @@
 var _ = require('lodash');
+var fs = require('fs');
 
 var pkg = require('./package.json');
+var config = require('./config.json');
+
+if (!config || !config.locale) {
+  config.locale = 'default';
+}
+
+var i18n = require('./i18n/' + config.locale + '.json');
 
 var namelist = [];
 var passnames = [];
@@ -63,7 +71,7 @@ container.ondrop = function(e) {
       return itm.length > 0;
     });
     namelist = _.shuffle(names);
-    addMsg('Ready!', 'info');
+    addMsg(i18n.ready, 'info');
   };
 
   reader.readAsText(file, "GBK");
@@ -73,7 +81,7 @@ container.ondrop = function(e) {
 
 function roll() {
   if(namelist.length <= 0) {
-    addMsg('Please drag namelist file here!', 'warning');
+    addMsg(i18n.nofile, 'warning');
     return;
   }
 
@@ -81,7 +89,7 @@ function roll() {
     passnames.push($('#result').text());
     clearInterval(interval);
     interval = null;
-    btn.innerHTML = "Roll!";
+    btn.innerHTML = i18n.btn_roll;
     return;
   }
 
@@ -96,7 +104,7 @@ function roll() {
       _temp = namelist;
     }
     if (_temp.length <= 1) {
-      addMsg('Please Reset!', 'warning');
+      addMsg(i18n.tip_reset, 'warning');
       clearInterval(interval);
       return false;
     }
@@ -104,7 +112,7 @@ function roll() {
     showResult(shuffled);
   }, 30);
 
-  btn.innerHTML = "Pause";
+  btn.innerHTML = i18n.btn_pause;
   $('#roll').blur();
 }
 
@@ -114,8 +122,8 @@ function reset() {
     clearInterval(interval);
     interval = null;
   }
-  btn.innerHTML = "Roll!";
-  addMsg('Ready!', 'info');
+  btn.innerHTML = i18n.btn_roll;
+  addMsg(i18n.ready, 'info');
   $('#reset').blur();
 }
 
@@ -155,9 +163,26 @@ $('.drawer #ipt-bypass').change(function() {
   }
 });
 
+$('.drawer #select-i18n').change(function() {
+  console.log($(this).val());
+  config.locale = $(this).val();
+  updateConfig(config);
+  i18n = require('./i18n/' + config.locale + '.json');
+  console.log(i18n);
+});
+
 $('.drawer .version').text('v' + pkg.version);
 
 
 $(function() {
-  addMsg('Drag namelist here to start', 'info');
+  addMsg(i18n.splash, 'info');
+
+  $('[data-i18n]').toArray().forEach(function(elm) {
+    $(elm).text(i18n[$(elm).attr('data-i18n')]);
+  });
 });
+
+
+function updateConfig(config) {
+  fs.writeFileSync('./config.json', JSON.stringify(config));
+}

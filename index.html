@@ -14,14 +14,23 @@
             <div id="result"></div>
         </div>
 
-        <button id="roll" class="btn btn-primary">Roll!</button>
-        <button id="reset" class="btn btn-default">Reset</button>
+        <button id="roll" class="btn btn-primary" data-i18n="btn_roll">Roll!</button>
+        <button id="reset" class="btn btn-default" data-i18n="btn_reset">Reset</button>
 
         <div class="drawer">
             <div class="drawer-handle"><i class="glyphicon glyphicon-chevron-down"></i></div>
             <div class="drawer-inner">
-                <label for="bypass">Bypass</label>
-                <input id="ipt-bypass" name="bypass" type="checkbox">
+                <div>
+                    <label for="bypass" data-i18n="opt_bypass">Bypass</label>
+                    <input id="ipt-bypass" name="bypass" type="checkbox">
+                </div>
+                <div>
+                    <label for="i18n" data-i18n="opt_i18n">languages</label>
+                    <select name="select-i18n" id="select-i18n">
+                      <option value="default">English</option>
+                      <option value="zh-CN">简体中文</option>
+                    </select>
+                </div>
             </div>
             <div class="drawer-footer">
                 <span class="version"></span> &copy; 2014 Leigh @lisposter  http://zhu.li

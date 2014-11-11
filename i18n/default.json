@@ -1,0 +1,10 @@
+{
+    "splash": "Drag namelist here to start",
+    "nofile": "Please drag namelist file here!",
+    "ready": "Ready!",
+    "tip_reset": "Please Reset!",
+    "btn_roll": "Roll",
+    "btn_pause": "Pause",
+    "btn_reset": "Reset",
+    "opt_bypass": "Bypass"
+}
