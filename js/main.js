@@ -164,11 +164,9 @@ $('.drawer #ipt-bypass').change(function() {
 });
 
 $('.drawer #select-i18n').change(function() {
-  console.log($(this).val());
   config.locale = $(this).val();
   updateConfig(config);
   i18n = require('./i18n/' + config.locale + '.json');
-  console.log(i18n);
 });
 
 $('.drawer .version').text('v' + pkg.version);
