@@ -168,6 +168,9 @@ $('.drawer #select-i18n').change(function() {
   updateConfig(config);
   i18n = require('./i18n/' + config.locale + '.json');
   $('.drawer #select-i18n [value="'+ config.locale +'"]').attr('selected', 'selected').siblings().removeAttr('selected');
+
+  // reload window
+  document.location.reload(true);
 });
 
 $('.drawer .version').text('v' + pkg.version);
@@ -175,6 +178,7 @@ $('.drawer .version').text('v' + pkg.version);
 
 $(function() {
   addMsg(i18n.splash, 'info');
+   $('.drawer #select-i18n [value="'+ config.locale +'"]').attr('selected', 'selected').siblings().removeAttr('selected');
 
   $('[data-i18n]').toArray().forEach(function(elm) {
     $(elm).text(i18n[$(elm).attr('data-i18n')]);
