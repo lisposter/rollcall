@@ -167,6 +167,7 @@ $('.drawer #select-i18n').change(function() {
   config.locale = $(this).val();
   updateConfig(config);
   i18n = require('./i18n/' + config.locale + '.json');
+  $('.drawer #select-i18n [value="'+ config.locale +'"]').attr('selected', 'selected').siblings().removeAttr('selected');
 });
 
 $('.drawer .version').text('v' + pkg.version);
