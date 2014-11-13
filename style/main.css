@@ -3,6 +3,7 @@ body,
 #container {
     height: 100%;
     width: 100%;
+    min-width: 220px;
     overflow: hidden;
 }
 
@@ -36,6 +37,14 @@ body {
     color: #333;
 }
 
+@media (max-width: 500px) {
+    #message,
+    #result {
+        height: auto;
+        padding: 0 10px;
+    }
+}
+
 /* TODO: split them */
 #result {
     font-size: 50px;
@@ -60,6 +69,19 @@ body {
     right: 10%;
 }
 
+@media (max-width: 500px) {
+    #roll,
+    #reset {
+        width: 200px;
+        left: 50%;
+        right: auto;
+        margin-left: -100px;
+    }
+    #roll {
+        bottom: 80px;
+    }
+
+}
 
 .drawer {
     position: absolute;
