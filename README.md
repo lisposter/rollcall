@@ -30,7 +30,8 @@ $ /path/to/node-webkit-v0.xx.xx-osx-x64/node-webkit.app/Contents/MacOS/node-webk
 ## How to use?
 1\. drag and drop a text file contains names of others(one item per line) into app's window.
 
-2\. click 'Roll!' button to shuffle, and click 'Pause' button to pick up one.
+2\. click 'Roll!' key button to shuffle, and click 'Pause' button to pick up one or just press the space to toggle. The 'Reset'/ enter key is for reset the bypass.
+
 
 
 ## License
