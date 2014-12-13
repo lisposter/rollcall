@@ -32,7 +32,10 @@ $ /path/to/node-webkit-v0.xx.xx-osx-x64/node-webkit.app/Contents/MacOS/node-webk
 
 2\. click 'Roll!' key button to shuffle, and click 'Pause' button to pick up one or just press the space to toggle. The 'Reset'/ enter key is for reset the bypass.
 
+## Options
 
+* `Bypass`, if this is `true`, the names which has been called will be ignored next calling.
+* `Language`, currently, there are two languages avaliable: `English`, `简体中文`.
 
 ## License
 MIT
