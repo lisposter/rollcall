@@ -1,13 +1,16 @@
-var _ = require('lodash');
 var fs = require('fs');
+
+var _ = require('lodash');
 
 var pkg = require('./package.json');
 var config = require('./config.json');
 
+// detect if there is default setting for language
 if (!config || !config.locale) {
   config.locale = 'default';
 }
 
+// set laguage file
 var i18n = require('./i18n/' + config.locale + '.json');
 
 var namelist = [];

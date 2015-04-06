@@ -1,5 +1,5 @@
 # rollcall
-A simple rollcall app based on node-webkit.
+A simple rollcall app based on nw.js (node-webkit).
 
 > **Note:**
 > I just have made it work, the code is messy now.
