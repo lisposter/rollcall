@@ -20,10 +20,10 @@ $ cd /path/to/rollcall
 $ npm i
 ```
 
-3\. run with node-webkit
+3\. run with nw.js
 
 ```
-$ /path/to/node-webkit-v0.xx.xx-osx-x64/node-webkit.app/Contents/MacOS/node-webkit .
+$ /path/to/nw/nwjs.app/Contents/MacOS/nwjs /path/to/this/repo
 ```
 
 
