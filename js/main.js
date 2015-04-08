@@ -13,6 +13,7 @@ if (!config || !config.locale) {
 // set laguage file
 var i18n = require('./i18n/' + config.locale + '.json');
 
+// init variables
 var namelist = [];
 var passnames = [];
 var interval;
