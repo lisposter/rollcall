@@ -1,6 +1,6 @@
 {
   "name": "Rollcall",
-  "description": "Simple rocall app based on node-webkit.",
+  "description": "Simple rocall app based on nw.js.",
   "version": "0.5.0",
   "main": "index.html",
   "window": {
