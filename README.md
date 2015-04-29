@@ -38,4 +38,4 @@ $ /path/to/nw/nwjs.app/Contents/MacOS/nwjs /path/to/this/repo
 * `Language`, currently, there are two languages avaliable: `English`, `简体中文`.
 
 ## License
-MIT @ [Leigh Zhu](http://zhu.li)
+MIT © [Leigh Zhu](http://zhu.li)
